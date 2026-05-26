@@ -2,257 +2,56 @@
 <html lang="ar">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>لأحلى ملك</title>
     <style>
-        body {
-            background-color: #ffe5ec;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            direction: rtl;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .container {
-            background-color: #ffffff;
-            padding: 30px;
-            border-radius: 25px;
-            box-shadow: 0 10px 30px rgba(251, 111, 146, 0.3);
-            text-align: center;
-            width: 340px;
-            display: none;
-            border: 3px solid #ffb3c1;
-            z-index: 10;
-        }
-
-        .container.active {
-            display: block;
-            animation: popIn 0.4s ease-out;
-        }
-
-        @keyframes popIn {
-            0% { transform: scale(0.8); opacity: 0; }
-            100% { transform: scale(1); opacity: 1; }
-        }
-
-        img {
-            width: 180px;
-            height: 180px;
-            object-fit: contain;
-            margin-bottom: 20px;
-        }
-
-        h2 {
-            color: #ff477e;
-            font-size: 22px;
-            margin-bottom: 25px;
-            font-weight: 600;
-            line-height: 1.4;
-        }
-
-        button {
-            background-color: #ff758f;
-            color: white;
-            border: none;
-            padding: 12px 20px;
-            border-radius: 50px;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            margin: 8px;
-            width: 80%;
-            box-shadow: 0 4px 10px rgba(255, 117, 143, 0.3);
-        }
-
-        button:hover {
-            background-color: #ff477e;
-            transform: translateY(-2px);
-        }
-
-        .btn-group {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        #heart-btn {
-            font-size: 55px;
-            background: none;
-            border: none;
-            box-shadow: none;
-            cursor: pointer;
-            animation: heartbeat 1.2s infinite;
-            width: auto;
-        }
-        
-        #heart-btn:hover {
-            transform: scale(1.2);
-        }
-
-        @keyframes heartbeat {
-            0% { transform: scale(1); }
-            20% { transform: scale(1.1); }
-            40% { transform: scale(1.15); }
-            60% { transform: scale(1); }
-        }
-
-        .heart-fall {
-            position: absolute;
-            color: #ff477e;
-            font-size: 20px;
-            pointer-events: none;
-            animation: fall linear forwards;
-            z-index: 1;
-        }
-
-        @keyframes fall {
-            0% { transform: translateY(-50px) translateX(0); opacity: 1; }
-            100% { transform: translateY(100vh) translateX(50px); opacity: 0; }
-        }
-
-        .music-box {
-            border: 2px solid #ffccd5;
-            border-radius: 20px;
-            padding: 15px;
-            background-color: #fff0f3;
-            margin-top: 15px;
-        }
-
-        .music-title {
-            font-size: 14px;
-            color: #ff477e;
-            margin-bottom: 10px;
-            font-weight: bold;
-        }
-
-        .audio-controls {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-        }
-
-        .control-btn {
-            background-color: #ff758f;
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 18px;
-            color: white;
-            cursor: pointer;
-            border: none;
-        }
+        body { background-color: #ffe5ec; font-family: sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; direction: rtl; }
+        .container { background-color: #ffffff; padding: 30px; border-radius: 25px; box-shadow: 0 10px 30px rgba(251, 111, 146, 0.3); text-align: center; width: 320px; display: none; border: 3px solid #ffb3c1; }
+        .container.active { display: block; }
+        img { width: 160px; height: 160px; margin-bottom: 15px; border-radius: 15px; }
+        button { background-color: #ff758f; color: white; border: none; padding: 12px 25px; border-radius: 20px; cursor: pointer; margin: 5px; font-weight: bold; font-size: 16px; }
+        .btn-row { display: flex; justify-content: center; gap: 10px; }
     </style>
 </head>
 <body>
 
-    <div class="container active" id="step-1">
-        <img src="https://i.postimg.com/D04Y40p4/kitty-wave.gif" alt="Welcome">
-        <h2>هلو ملك</h2>
-        <div class="btn-group">
-            <button onclick="nextStep(2)">هلوو</button>
-        </div>
+<div class="container active" id="step-1">
+    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHJqZ3ZqZndqZndqZndqZndqZndqZndqZndqZndqZndqZndqZndqJmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/3o7TKVUn7iM8FMEU24/giphy.gif" alt="Welcome">
+    <h2>هلو ملك</h2>
+    <button onclick="nextStep(2)">هلوو</button>
+</div>
+
+<div class="container" id="step-2">
+    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHJqZ3ZqZndqZndqZndqZndqZndqZndqZndqZndqZndqZndqZndqJmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/12PA1eJ8Lz064g/giphy.gif" alt="Shy">
+    <h2>ملك عندي سؤال بس مستحي اقلك اياه 🫣</h2>
+    <button onclick="nextStep(3)">اسألني</button>
+</div>
+
+<div class="container" id="step-3">
+    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHJqZ3ZqZndqZndqZndqZndqZndqZndqZndqZndqZndqZndqZndqJmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/l41lTjJp8whYyGzrq/giphy.gif" alt="Ask">
+    <h2>بتحبي زيد او لا؟</h2>
+    <div class="btn-row">
+        <button onclick="nextStep(4)">مدري</button>
+        <button onclick="alert('ايشش هااا؟ 🤨')">شنو هاا؟ 🤨</button>
     </div>
+</div>
 
-    <div class="container" id="step-2">
-        <img src="https://i.postimg.com/43XbX66G/kitty-shy.gif" alt="Question">
-        <h2>ملك عندي سؤال الججج بس مستحية اسالك اياه 🫣</h2>
-        <div class="btn-group">
-            <button onclick="nextStep(3)">اسأليني</button>
-        </div>
-    </div>
+<div class="container" id="step-4">
+    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHJqZ3ZqZndqZndqZndqZndqZndqZndqZndqZndqZndqZndqZndqJmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/oFeUVZfiuGqR5q2q1p/giphy.gif" alt="Love">
+    <h2>اذا بتحبي زيد اكبسي على القلب 🥹👉🏻</h2>
+    <button style="font-size: 30px;" onclick="nextStep(5)">❤️</button>
+</div>
 
-    <div class="container" id="step-3">
-        <img src="https://i.postimg.com/v8YmP9mS/kitty-ask.gif" id="img-step3" alt="Do you love me">
-        <h2>تحبين زيد لو لاا؟</h2>
-        <div class="btn-group">
-            <button onclick="nextStep(4)">مدري</button>
-            <button onclick="changeResponse()">شنو هاا؟ 🤨</button>
-        </div>
-    </div>
+<div class="container" id="step-5">
+    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHJqZ3ZqZndqZndqZndqZndqZndqZndqZndqZndqZndqZndqZndqJmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/MDJ9IbxxvDUQM/giphy.gif" alt="Dance">
+    <h2>كل عام وانتي اقرب انسانة لقلبي و ادعي لحالك دايما بالفرح لان انا فرحي لما اشوف ضحكتك و اشوفك مبسوطة 💖</h2>
+    <audio id="audio" controls autoplay src="https://dl.musicdel.ir/Music/1402/09/Nancy%20Ajram%20-%20Ya%20Kethar.mp3"></audio>
+</div>
 
-    <div class="container" id="step-4">
-        <img src="https://i.postimg.com/02fVpYgW/kitty-love.gif" alt="Press Heart">
-        <h2>اذا تحبين زيد دوسي على القلب 🥹👉🏻</h2>
-        <div class="btn-group">
-            <button id="heart-btn" onclick="showFinal()">❤️</button>
-        </div>
-    </div>
-
-    <div class="container" id="step-5">
-        <img src="https://i.postimg.com/mDtM667g/kitty-dance.gif" alt="Celebration">
-        <h2 style="font-size: 17px; line-height: 1.6; color: #d81b60;">
-            ملك حبيبتي، كل عام وانتي اقرب انسانة لقلبي الأبيض، ادعي بهالعيد تبقين دوم سعيدة لأن ضحكتج وحدها تكفي حتى تخلي الدنيا كلها تحلى. 💖
-        </h2>
-        
-        <div class="music-box">
-            <div class="music-title">🎵 نانسي عجرم - يا كثر 💕</div>
-            <div class="audio-controls">
-                <button class="control-btn" onclick="playAudio()">▶</button>
-                <button class="control-btn" onclick="pauseAudio()">⏸</button>
-            </div>
-        </div>
-        
-        <audio id="bg-music" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" loop></audio>
-    </div>
-
-    <script>
-        const music = document.getElementById('bg-music');
-        
-        // ضبط الأغنية لتبدأ مباشرة من المقطع المطلوب (الدقيقة 1:31 تساوي 91 ثانية)
-        music.addEventListener('canplaythrough', () => {
-            if(music.currentTime < 91) {
-                music.currentTime = 91; 
-            }
-        });
-
-        function nextStep(step) {
-            document.querySelector('.container.active').classList.remove('active');
-            document.getElementById('step-' + step).classList.add('active');
-        }
-
-        function changeResponse() {
-            document.getElementById('img-step3').src = 'https://i.postimg.com/4N3fX0Y2/kitty-sad.gif';
-        }
-
-        function showFinal() {
-            nextStep(5);
-            startHearts();
-            playAudio();
-        }
-
-        function playAudio() { 
-            // تشغيل الصوت وضبط الوقت للمقطع الصح
-            if (music.currentTime < 91) {
-                music.currentTime = 91;
-            }
-            music.play().catch(e => console.log("البراوزر يمنع التشغيل التلقائي حتى التفاعل"));
-        }
-        
-        function pauseAudio() { 
-            music.pause(); 
-        }
-
-        function startHearts() {
-            setInterval(() => {
-                const heart = document.createElement('div');
-                heart.innerHTML = '❤️';
-                heart.classList.add('heart-fall');
-                heart.style.left = Math.random() * 100 + 'vw';
-                heart.style.animationDuration = Math.random() * 2 + 3 + 's';
-                document.body.appendChild(heart);
-                setTimeout(() => heart.remove(), 5000);
-            }, 300);
-        }
-    </script>
+<script>
+    function nextStep(s) {
+        document.querySelector('.container.active').classList.remove('active');
+        document.getElementById('step-'+s).classList.add('active');
+    }
+</script>
 </body>
 </html>
